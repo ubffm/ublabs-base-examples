@@ -1,0 +1,64 @@
+$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmlstarlet sel -t -v '/collection/list_repositories/reposito
+ry/name/text()' | egrep -i '(l[ia]ng[uv]|sprach)' | wc -l
+57
+
+$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmlstarlet sel -t -v '/collection/list_repositories/repository/name/text()' | egrep -i '(l[ia]ng[uv]|sprach)'       
+Advanced Linguistics (E-Journal)
+NaUKMA Research Papers - Linguistics
+Linguistic Data and NLP Tools CLARIN
+Traverse - Journal of Language and Applied Linguistics
+Linguistics Initiative (E-Journal)
+International Journal of Language and Literary Studies
+ALE Journal (Arts, Languages, Education)
+Al-Uslub - Journal of Arabic Linguistic and Literature
+Journal of Language Intelligence and Culture (JLIC)
+TRANS-KATA - Journal of Language, Literature, Culture, and Education
+Smart Moves Journal IJELLH (International Journal of English language, literature in humanities)
+Association for Computational Linguistics (via Crossref)
+Linguistic Forum (LinFo) (E-Journal)
+ForAP - Forschungsergebnisse von Absolventen und Promovierenden der Fakultät für Sprach-, Literatur- und Kulturwissenschaften (E-Journal)
+Espaces Linguistiques (E-Journal)
+Lingu@ Nostr@ (E-Journal)
+Dual Language Research and Practice Journal
+Journal of South Asian Linguistics
+Journal of South Asian Languages
+Stellenbosch Papers in Linguistics
+Stellenbosch Papers in Linguistics Plus
+LACLIL -  Latin American Journal of Content &amp; Language Integrated Learning
+Modern Languages Open (MLO - E-Journal)
+Proceedings of INACELT (International Conference on English Language Teaching)
+Bergen Language and Linguistic Studies (BeLLS - E-Journal)
+SALTeL Journal (Southeast Asia Language Teaching and Learning)
+JESLA - Journal of the European Second Language Association (EuroSLA)
+Bilingual Publishing Co. (BPC): E-Journals
+Indonesian Journal of EFL and Linguistics
+IJOLTL: Indonesian Journal of Language Teaching and Linguistics
+LINGUA: Journal of Language, Literature and Teaching
+Annual International Conference on Language and Literature
+Multi-Lingual Scientific (MLS) Journals
+The Achievers Journal - Journal of English Language, Literature and Culture
+Proceedings Published by the LSA (Linguistic Society of America)
+Language Art (E-Journal)
+Biolinguistics (E-Journal)
+Università IULM: Apeiron (Università di comunicazione e lingue)
+Inalco (Institut National des Langues et Civilisations Orientales): HAL
+Plaza: Dialogues in Language and Literature (Texas Digital Library - TDL E-Journals)
+Linguistic Data and NLP Tools (CLARIN - Common Language Resources and Technology Infrastructure, Slovenia)
+Speech and Language Data Repository (SLDR/ORTOLANG)
+Hamburger Zentrum für Sprachkorpora (HZSK): Digital Repository for Linguistic Resources and Tools
+Revistă de lingvistică diacronică)
+International Journal of Multifaceted and Multilingual Studies (IJMMS)
+Historias Fingidas (E-Journal, Università di Verona, Dipartimento di Lingue e Letterature Straniere)
+Journal of English Language and Literature (JELL)
+Language Science Press
+Instituto de Estudos da Linguagem (IEL) Unicamp (Universidade Estadual de Campinas (UNICAMP),: Sistema Eletrônico de Editoração): Revistas
+LINDAT-Clarin: Repository (Centre for Language Research Infrastructure in the Czech Republic)
+Linguistic Evidence in Security, Law and Intelligence (LESLI, Institute for Linguistic Evidence)
+Institut für Deutsche Sprache: Publikationsserver
+Entrepalavras - Revista de Linguística do Departamento de Letras Vernáculas da UFC (Universidade Federal do Ceará)
+OLAC: Open Language Archives Community
+Language Box (University of Southampton)
+TEFLIN (Teaching English as a Foreign Language in Indonesia) Journal (State University Malang)
+k@ta - A Biannual Publication on the Study of Language and Literature (Petra Christian University, Indonesia)
+
+
