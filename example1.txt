@@ -1,5 +1,16 @@
-$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmlstarlet sel -t -v '/collection/list_repositories/reposito
-ry/name/text()' | egrep -i '(l[ia]ng[uv]|sprach)' | wc -l
+$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmllint --format - | head                                            :(
+<?xml version="1.0" encoding="UTF-8"?>
+<collection>
+  <collection_name>all</collection_name>
+  <list_repositories>
+    <repository>
+      <activation_date>2022-05-31</activation_date>
+      <name_en>Institutional repository of HM Hochschule München University of Applied Sciences</name_en>
+      <name>Publikationsserver der Hochschule München</name>
+      <internal_name>fthmuenchen</internal_name>
+    </repository>
+
+$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmlstarlet sel -t -v '/collection/list_repositories/repository/name/text()' | egrep -i '(l[ia]ng[uv]|sprach)' | wc -l
 57
 
 $ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmlstarlet sel -t -v '/collection/list_repositories/repository/name/text()' | egrep -i '(l[ia]ng[uv]|sprach)'       
