@@ -14,9 +14,7 @@ def has_relevant_title(repo):
 
 def is_oa(repo):
     oa_ratio = repo["num_oa_records"] / repo["num_records"]
-    if oa_ratio >= 0.8 and repo["num_records"] > 100:
-        return True
-    return False
+    return oa_ratio >= 0.8 and repo["num_records"] > 100
 
 
 def main():
