@@ -13,9 +13,14 @@ API_URL = "https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi"
 LIST_REPOSITORIES = "ListRepositories"
 LIST_PROFILE = "ListProfile"
 PERFORM_SEARCH = "PerformSearch"
-PROXIES = {}
+PROXIES = {"http": "socks5://127.0.0.1:9911", "https": "socks5://127.0.0.1:9911"}
+
 
 def list_repositories(coll=None):
+    """Wraper around the ListRepositories API call.
+    coll: string to specify a subsection of BASE. For valid values cf. the docs
+    above
+    """
     params = {"func": LIST_REPOSITORIES, "format": "json"}
     if coll is not None:
         params["coll"] = coll
@@ -26,6 +31,9 @@ def list_repositories(coll=None):
 
 
 def iter_list_repositories(coll=None):
+    """Iterate over all respos (in the collection). As opposed to list_repositories,
+    the structure is changed to single dicts that contain all information.
+    """
     repos = list_repositories(coll=coll)
     for internal_name, record in repos["collection"]["list_repositories"].items():
         record["internal_name"] = internal_name
@@ -33,6 +41,9 @@ def iter_list_repositories(coll=None):
 
 
 def get_profile(record):
+    """Turns a profile retrieved via "list_profile" into a usable python
+    structure. This includes convertig data into appropriate types.
+    """
     for key, value in record.items():
         if key.startswith("num_"):
             try:
@@ -50,6 +61,9 @@ def get_profile(record):
 
 
 def list_profile(target, wait=0):
+    """Wrapper around the "ListProfile" API call. target is the internal identifier
+    of a repo. wait is used to introduce a delay when doing many calls in a row.
+    """
     if not target:
         raise ValueError("No target.")
     sleep(wait)
@@ -62,6 +76,7 @@ def list_profile(target, wait=0):
 
 
 def perform_search(query, **kwargs):
+    """Wrapper around the PerformSearch API call."""
     if not query:
         raise ValueError("No query.")
     params = {"func": PERFORM_SEARCH, "query": query, "format": "json"}
