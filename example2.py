@@ -6,10 +6,9 @@ REPO_PATTERN = re.compile(r"(l[ia]ng[uv]|sprach)", re.IGNORECASE)
 
 
 def has_relevant_title(repo, pattern=REPO_PATTERN):
-    """Check if alle title fields in a repository repo agsinst the prodived pattern"""
+    """Check all title fields of a repository repo against the provided pattern."""
     return bool(
-        re.findall(pattern, repo["name"])
-        or re.findall(pattern, repo["name_en"])
+        re.findall(pattern, repo["name"]) or re.findall(pattern, repo["name_en"])
     )
 
 
