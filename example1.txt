@@ -1,4 +1,4 @@
-$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmllint --format - | head                                            :(
+$ curl -s 'https://api.base-search.net/cgi-bin/BaseHttpSearchInterface.fcgi?func=ListRepositories' | xmllint --format - | head
 <?xml version="1.0" encoding="UTF-8"?>
 <collection>
   <collection_name>all</collection_name>
@@ -71,5 +71,4 @@ OLAC: Open Language Archives Community
 Language Box (University of Southampton)
 TEFLIN (Teaching English as a Foreign Language in Indonesia) Journal (State University Malang)
 k@ta - A Biannual Publication on the Study of Language and Literature (Petra Christian University, Indonesia)
-
 
